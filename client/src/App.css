@@ -128,7 +128,7 @@ body { background-color: #1a1a1a; color: #333; }
   }
 
   /* 3. Shrink the side/login pane so it shares the screen gracefully */
-  .side-panel, .login-card { 
+  .sidebar, .login-card { 
     flex: 1; /* Takes up the remaining 35-40% of space */
     width: 100%;
     min-height: 30vh;
