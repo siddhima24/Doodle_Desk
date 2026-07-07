@@ -16,7 +16,6 @@ const io = new Server(server, {
   } 
 });
 
-const MASTER_ADMIN_PASSWORD = "crimeinvestigationdepartment";
 
 // 🧠 Advanced Server Memory
 const roomsData = {};
@@ -44,7 +43,7 @@ io.on('connection', (socket) => {
 
   // --- 2. ADMIN ACTIONS ---
   socket.on('admin-login', (password, callback) => {
-    if (password === MASTER_ADMIN_PASSWORD) {
+    if (password === process.env.ADMIN_PASSWORD) {
       callback({ success: true, pending: Object.keys(pendingUsers) });
     } else {
       callback({ success: false, message: "Wrong admin password." });
