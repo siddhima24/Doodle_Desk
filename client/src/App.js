@@ -164,8 +164,8 @@ function App() {
     if (!isDrawing || !isDrawingMode) return;
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    // const x = e.clientX - rect.left;
+    // const y = e.clientY - rect.top;
     
     const currentColor = isEraser ? 'eraser' : brushColor;
     drawLine(x - e.movementX, y - e.movementY, x, y, currentColor, brushSize, currentStrokeId.current, true);
