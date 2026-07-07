@@ -2,6 +2,8 @@
 
 Doodle Desk is a full-stack, real-time collaborative web application that allows multiple users to seamlessly share a workspace. Whether you are brainstorming on a shared digital canvas or syncing notes in a live text editor, Doodle Desk synchronizes your interactions across all connected devices with sub-millisecond latency.
 
+Grab a seat: https://doodle-desk-nine.vercel.app/ 
+
 ## ✨ Features
 
 * **Real-Time Synchronization:** Powered by Socket.io for instant bi-directional communication between clients and the server.
