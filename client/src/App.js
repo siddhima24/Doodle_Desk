@@ -419,6 +419,7 @@ function App() {
           className="editor-container" 
           style={{ position: 'relative', overflow: 'hidden' }}
           onMouseMove={handleWorkspaceMouseMove} // 👈 Track movements here
+          onTouchMove={handleWorkspaceMouseMove}
         >
           <textarea 
             className="text-editor" 
@@ -436,6 +437,12 @@ function App() {
             onMouseMove={onMouseMove}
             onMouseUp={onMouseUp}
             onMouseOut={onMouseUp}
+
+            onTouchStart={onMouseDown}
+            onTouchMove={onMouseMove}
+            onTouchEnd={onMouseUp}
+            onTouchCancel={onMouseUp}
+            
             style={{
               position: 'absolute',
               top: 0,
