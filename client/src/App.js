@@ -311,10 +311,10 @@ function App() {
     return (
       <div className="login-overlay">
         <div className="login-card">
-          <h2>Welcome to the Cafe</h2>
+          <h2>Welcome to Doodle Desk!</h2>
           <form onSubmit={handleAuth}>
-            <input className="login-input" placeholder="Your Name" value={username} onChange={e => setUsername(e.target.value)} required />
-            <input className="login-input" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
+            <input className="login-input" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} required />
+            <input className="login-input" type="password" placeholder="Create/Enter Password" value={password} onChange={e => setPassword(e.target.value)} required />
             <button className="login-btn" type="submit">Knock / Enter</button>
           </form>
           {message && <p style={{ color: '#ffda75', marginTop: '15px' }}>{message}</p>}
@@ -377,7 +377,7 @@ function App() {
           onClick={() => setIsDrawingMode(!isDrawingMode)} 
           style={{ marginTop: '20px', padding: '10px', background: isDrawingMode ? '#8b6b4a' : 'transparent', color: '#f8f8f8', border: '2px dashed #8b6b4a', cursor: 'pointer', fontFamily: 'inherit', transition: '0.2s' }}
         >
-          {isDrawingMode ? '🖍️ Doodling Mode ON' : '⌨️ Typing Mode ON'}
+          {isDrawingMode ? 'Switch to Type' : 'Switch to Doodle'}
         </button>
 
         {/* Tool Palette (Only shows when doodling) */}
