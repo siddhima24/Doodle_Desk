@@ -132,13 +132,35 @@ function App() {
     }
   };
 
+  const getCoordinates = (event) => {
+  const canvas = canvasRef.current;
+  if (!canvas) return { x: 0, y: 0 };
+  
+  // If it is a touch event from a phone screen
+  if (event.touches && event.touches.length > 0) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: event.touches[0].clientX - rect.left,
+      y: event.touches[0].clientY - rect.top
+    };
+  }
+  
+  // Otherwise, it is a standard mouse event from a laptop
+  return {
+    x: event.nativeEvent.offsetX,
+    y: event.nativeEvent.offsetY
+  };
+};
+
   const onMouseDown = (e) => {
+    const { x, y } = getCoordinates(e);
     if (!isDrawingMode) return;
     setIsDrawing(true);
     currentStrokeId.current = Date.now().toString(); 
   };
 
   const onMouseMove = (e) => {
+    const { x, y } = getCoordinates(e);
     if (!isDrawing || !isDrawingMode) return;
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
@@ -442,7 +464,7 @@ function App() {
             onTouchMove={onMouseMove}
             onTouchEnd={onMouseUp}
             onTouchCancel={onMouseUp}
-            
+
             style={{
               position: 'absolute',
               top: 0,
